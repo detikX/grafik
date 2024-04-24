@@ -1,39 +1,78 @@
-// Data retrieved from https://olympics.com/en/olympic-games/beijing-2022/medals
 Highcharts.chart('container', {
     chart: {
         type: 'pie',
         options3d: {
             enabled: true,
-            alpha: 45
+            alpha: 45,
+            beta: 0
         }
     },
     title: {
-        text: 'Beijing 2022 gold medals by country',
+        text: '10 PUSKESMAS DENGAN 9 (SEMBILAN) SESUAI STANDAR JENIS TENAGA KESEHATAN TERENDAH MENURUT PROVINSI TAHUN 2022',
         align: 'left'
     },
     subtitle: {
-        text: '3D donut in Highcharts',
+        text: 'Source: ' +
+            '<a href="https://www.kemkes.go.id/id/home/"' +
+            'target="_blank">Kementerian Kesehatan</a>',
         align: 'left'
     },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    // tooltip: {
+    //     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    // },
     plotOptions: {
         pie: {
-            innerSize: 100,
-            depth: 45
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
         }
     },
     series: [{
-        name: 'Medals',
-        data: [
-            ['Norway', 16],
-            ['Germany', 12],
-            ['USA', 8],
-            ['Sweden', 8],
-            ['Netherlands', 8],
-            ['ROC', 6],
-            ['Austria', 7],
-            ['Canada', 4],
-            ['Japan', 3]
+        type: 'pie',
+        name: 'Nakes (%)',
+        // ['Papua', 7.6],
+        // ['Papua Barat', 16.4],
+        // ['Maluku', 18.9],
+        // ['Nusa Tenggara Timur', 27.8],
+        // ['Sulawesi Utara', 30.3],
+        // ['Maluku Utara', 32.0],
+        // ['Kalimantan Tengah', 33.3],
+        // ['Bengkulu', 33.5]
+        // ['Sumatera Utara', 38.5],
+        // ['Lampung', 39.1]
 
+        data: [
+            {
+                name: 'Papua',
+                y: 7.6,
+                sliced: true,
+                selected: true
+            },
+            // ['Papua', 7.6],
+            ['Papua Barat', 16.4],
+            // {
+            //     name: 'Xiaomi',
+            //     y: 12,
+            //     sliced: true,
+            //     selected: true
+            // },
+            ['Maluku', 18.9],
+            ['Nusa Tenggara Timur*', 27.8],
+            ['Sulawesi Utara', 30.3],
+            ['Maluku Utara', 32.0],
+            ['Kalimantan Tengah', 33.3],
+            ['Bengkulu', 33.5],
+            ['Sumatera Utara', 38.5],
+            ['Lampung', 39.1]
         ]
     }]
 });
