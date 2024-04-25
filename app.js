@@ -66,7 +66,7 @@ Highcharts.chart('container', {
             //     selected: true
             // },
             ['Maluku', 18.9],
-            ['Nusa Tenggara Timur*', 27.8],
+            ['Nusa Tenggara Timur', 27.8],
             ['Sulawesi Utara', 30.3],
             ['Maluku Utara', 32.0],
             ['Kalimantan Tengah', 33.3],
